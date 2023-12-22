@@ -1,0 +1,89 @@
+:root{
+    --green: #04AA6D;
+    --red: #ff0000;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+ul{list-style: none;}
+
+
+.page-container{
+    position:relative;
+    width: max(80%, 700px);
+}
+
+#profile{
+    justify-content: space-around;
+    gap: 5rem;
+}
+
+.center{
+    margin: auto;
+}
+.pet-feed{
+    justify-content: space-around;
+}
+.pet-card{
+    position: relative;
+    width: 40%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 1rem;
+    text-decoration: none;
+    color: black;
+}
+
+.pet-card img{
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1/1;
+    
+}
+
+.green-font{
+    color: var(--green);
+}
+
+.red-font{
+    color: var(--red);
+}
+
+.button {
+    background-color: var(--green); /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  .button:hover{
+    color: var(--green);
+    background-color: white;
+    border: var(--green) 1px solid;
+  }
+
+  .flex{
+    display: flex;
+  }
+
+  .flex-column{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pet-feed{
+    flex-wrap: wrap;
+    gap: 1rem;
+  }

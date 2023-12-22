@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="center page-container">
+    <h3>Add a pet.</h3>
+    <form id="pet-add-form" method="POST" class="">
+        {{ form.csrf_token }}
+        {% for field in form
+            if field.widget.input_type != 'hidden' %}
+        <p>
+            {{field.label}}
+            {{field}}
+
+            {% for error in field.errors %}
+            <span class="red-font"><i>{{ error }}</i></span>
+            {% endfor %}
+        </p>
+        {% endfor %}
+        <button type="submit" class="button">Add</button>
+    </form>
+</div>
+{% endblock %}

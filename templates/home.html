@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="flex-column">
+    
+   <div class="flex pet-feed">
+    {% for pet in pets %}
+    <a href="/{{pet.id}}" class="pet-card">
+        <img src="{{pet.photo_url}}">
+        <h3>{{pet.name}}
+            {% if pet.available %}
+            <span class="green-font">is available!</span>
+            {% else %}
+            <span class="red-font">not available!</span>
+            {% endif %}
+        </h3>
+    </a>
+    {% endfor %}
+   </div>
+
+    <a href="/add" class="button">Add Pet</a>
+</div>
+
+{% endblock %}

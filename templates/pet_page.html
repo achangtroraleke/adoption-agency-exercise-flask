@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+<div id="profile" class=" center flex">
+    <div class="pet-card center">
+        <img src="{{pet.photo_url}}">
+        <h3>Name: {{pet.name}}</h3>
+        <h3>Species: {{pet.species}}</h3>
+        <h3>Age: {{pet.age}} y/o</h3>
+        <h5>Notes: {{pet.notes}}</h5>
+        <h3>Adoption: 
+            {% if pet.available %}
+            <span class="green-font">is available!</span>
+            {% else %}
+            <span class="red-font">Not available.</span>
+            {% endif %}
+        </h3>
+    </div>
+    <form id="pet-add-form" method="POST" class="">
+        {{ form.csrf_token }}
+        {% for field in form
+            if field.widget.input_type != 'hidden' %}
+        <p>
+            {{field.label}}
+            {{field}}
+
+            {% for error in field.errors %}
+            <span class="red-font"><i>{{ error }}</i></span>
+            {% endfor %}
+        </p>
+        {% endfor %}
+        <button type="submit" class="button">Save Edit</button>
+    </form>
+</div>
+{% endblock %}
